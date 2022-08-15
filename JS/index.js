@@ -17,7 +17,7 @@ addBtn.addEventListener('click', function () {
 
 	//Date/Time that note is taken
 	let now = new Date();
-	let dateTime = `${now.getMonth() + 1}-${now.getDate()}-${now.getFullYear()} | ${now.getHours()}:${now.getMinutes() < 10 ? '0' : ''}${now.getMinutes()}`;
+	let dateTime = `${now.getMonth() + 1}-${now.getDate()}-${now.getFullYear()} | ${now.getHours() % 12 || 12}:${now.getMinutes() < 10 ? '0' : ''}${now.getMinutes()} `;
 
 
 
@@ -51,14 +51,14 @@ function displayNotes() {
 
 	notesObj.forEach(function (element, index) {
 		html += `
-				<div class="card mx-4 my-2 bg-dark text-white thatsMyNote" style="width: 18rem;">
-					<div class="card-body">
-						<h6>${element.time}</h6>
-						<p class="card-text">${element.text.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</p>
-						<button id="${index}" onclick=deleteNote(this.id) class="btn btn-danger">Delete</button>
-					</div>
-				</div>
-			`;
+		<div div class="card mx-4 my-2 bg-dark text-white thatsMyNote" style = "width: 18rem;" >
+			<div class="card-body">
+				<h6>${element.time}</h6>
+				<p class="card-text">${element.text.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</p>
+				<button id="${index}" onclick=deleteNote(this.id) class="btn btn-danger">Delete</button>
+					</div >
+				</div >
+	`;
 	});
 
 	let noteEle = document.getElementById('notes');
