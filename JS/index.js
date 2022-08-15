@@ -17,7 +17,7 @@ addBtn.addEventListener('click', function () {
 
 	//Date/Time that note is taken
 	let now = new Date();
-	let dateTime = `${now.getMonth() + 1}-${now.getDate()}-${now.getFullYear()} | ${now.getHours()}:${now.getMinutes()}`;
+	let dateTime = `${now.getMonth() + 1}-${now.getDate()}-${now.getFullYear()} | ${now.getHours()}:${now.getMinutes() < 10 ? '0' : ''}${now.getMinutes()}`;
 
 
 
