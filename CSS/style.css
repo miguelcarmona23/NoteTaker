@@ -1,4 +1,4 @@
-@media screen (max-width: 991px;) {
+@media screen and (max-width: 991px) {
   .navbar-dark .navbar-toggler {
     margin-bottom: 2vh;
   }
